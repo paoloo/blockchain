@@ -16,29 +16,38 @@ To start a server for the application, run:
 
 ## Usage
 
-- Requesting the Blockchain: `GET 127.0.0.1:5000/chain`
-- Mining coins: `GET 127.0.0.1:5000/mine`
+- Requesting the whole Blockchain:
+```json
+$ curl -X GET 127.0.0.1:8090/chain
+```
+- Mining coins:
+```json
+$ curl -X GET 127.0.0.1:8090/mine
+```
 - Make a new transaction:
 ```json
 $ curl -X POST -H "Content-Type: application/json" -d '{
     "sender": "d4ee26eee15148ee92c6cd394edd974e",
     "recipient": "someone-other-address",
     "amount": 5
-}' "http://127.0.0.1:5000/transactions/new"
+}' "http://127.0.0.1:8090/transactions/new"
 ```
 - Register a new node:
 ```json
 $ curl -X POST -H "Content-Type: application/json" -d '{
-    "nodes": ["http://127.0.0.1:5001"]
-}' "http://127.0.0.1:5000/nodes/register"
+    "nodes": ["http://127.0.0.1:8091"]
+}' "http://127.0.0.1:8090/nodes/register"
 ```
-- Resolving Blockchain differences in each node: `GET 127.0.0.1:5000/nodes/resolve`
+- Resolving Blockchain differences in each node:
+```json
+$ curl -X GET 127.0.0.1:8090/nodes/resolve
+```
 
 ## Docker
 
 - Create a self contained version of application with: `lein ring uberjar`;
 - Run `docker build -t paoloo/blockchain .` to create image;
-- And finally, run `docker run paoloo/blockchain` to instantiate it.
+- And finally, run `docker run -p 8090:8090 paoloo/blockchain` to instantiate it.
 
 ## License
 
