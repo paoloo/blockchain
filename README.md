@@ -51,4 +51,6 @@ $ curl -X GET 127.0.0.1:8090/nodes/resolve
 
 ## License
 
-Copyright © 2017 DWTFYW
+MIT
+
+Copyright (c) 2017 Paolo Oliveira
