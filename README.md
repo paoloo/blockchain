@@ -39,13 +39,16 @@ $ curl -X POST -H "Content-Type: application/json" -d '{
 - Register a new node:
 ```json
 $ curl -X POST -H "Content-Type: application/json" -d '{
-    "nodes": ["http://127.0.0.1:8091"]
+    "node": "http://127.0.0.1:8091"
 }' "http://127.0.0.1:8090/nodes/register"
 ```
 - Resolving Blockchain differences in each node:
 ```json
 $ curl -X GET 127.0.0.1:8090/nodes/resolve
 ```
+## Tests
+
+    lain test
 
 ## Docker
 
