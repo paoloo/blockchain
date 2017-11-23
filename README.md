@@ -1,5 +1,7 @@
 # blockchain
 
+[![Travis CI](https://travis-ci.org/paoloo/blockchain.svg?branch=master)](https://travis-ci.org/paoloo/blockchain)
+
 A clojure implementation of a blockchain based on [Learn Blockchains by Building One](https://hackernoon.com/learn-blockchains-by-building-one-117428612f46)
 
 ## Prerequisites
