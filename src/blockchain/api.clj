@@ -3,8 +3,7 @@
             [compojure.route :as route]
             [ring.middleware.defaults :refer [wrap-defaults site-defaults]]
             [ring.middleware.json :as middleware]
-            [blockchain.impl :as impl]
-            ))
+            [blockchain.impl :as impl]))
 
 (defroutes app-routes
   (GET  "/mine"             []  (impl/mine))
