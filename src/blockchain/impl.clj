@@ -53,3 +53,9 @@
     (if (= (type k) (type ""))
       k
       "All conflicts were resolved. Chain was updated")))
+
+(defn serve-index "serve-index"
+  []
+  {:status  200
+   :headers {"Content-Type" "text/html"}
+   :body    (slurp "resources/public/index.html")})

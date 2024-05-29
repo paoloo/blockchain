@@ -6,11 +6,13 @@
             [blockchain.impl :as impl]))
 
 (defroutes app-routes
+  (GET  "/"                 []  (impl/serve-index))
   (GET  "/mine"             []  (impl/mine))
   (GET  "/chain"            []  (impl/chain))
   (POST "/transactions/new" req (impl/transaction-new req))
   (POST "/nodes/register"   req (impl/nodes-register req))
   (GET  "/nodes/resolve"    []  (impl/nodes-resolve))
+  (route/resources              "/")
   (route/not-found              "Not Found"))
 
 (def app
